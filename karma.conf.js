@@ -5,7 +5,7 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
-    browsers : ['Chrome'],
+    browsers: ['/usr/local/bin/custom-browser.sh'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
