@@ -37,8 +37,8 @@ module.exports = function (config) {
       '--no-sandbox',
       '--remote-debugging-port=9222']
       }
+      singleRun: true,
+      restartOnFileChange: true
     }
-    singleRun: true,
-    restartOnFileChange: true
   });
 };
