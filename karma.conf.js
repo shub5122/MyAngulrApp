@@ -5,7 +5,7 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
-    browsers: ['/usr/local/bin/custom-browser.sh'],
+    //browsers: ['/usr/local/bin/custom-browser.sh'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
@@ -21,15 +21,10 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
     customLaunchers: {
-    ChromeHeadless: {
-      base: 'Chrome',
-      flags: [
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: [
             '--headless',
             '--disable-gpu',
             '--no-sandbox',
@@ -37,7 +32,11 @@ module.exports = function (config) {
         ]
       }
     },
-    browsers: ['Chrome','ChromeHeadless'],
+    browsers: ['Chrome','ChromeHeadless'],    
+    reporters: ['progress', 'kjhtml'],
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
     singleRun: false,
     restartOnFileChange: true
   });
