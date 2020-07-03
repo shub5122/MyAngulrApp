@@ -44,5 +44,9 @@ module.exports = function (config) {
       browsers: ['PhantomJS', 'PhantomJS_custom'],
       singleRun: true,
       restartOnFileChange: true
+    phantomjsLauncher: {
+      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+      exitOnResourceError: true
+    }
   });
 };
