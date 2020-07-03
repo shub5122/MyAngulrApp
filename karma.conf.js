@@ -26,17 +26,18 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadlessNoSandbox'],
     customLaunchers: {
-    ChromeHeadlessNoSandbox: {
-    base: 'ChromeHeadless',
-    flags: [
-    '--no-sandbox',
-    '--user-data-dir=/tmp/chrome-test',
-    '--disable-web-security'
-    ]
-    }
+    ChromeHeadless: {
+      base: 'Chrome',
+      flags: [
+            '--headless',
+            '--disable-gpu',
+            '--no-sandbox',
+            '--remote-debugging-port=9222',
+        ]
+      }
     },
+    browsers: ['Chrome','ChromeHeadless'],
     singleRun: false,
     restartOnFileChange: true
   });
