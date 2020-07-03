@@ -29,15 +29,19 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     customLaunchers: {
-      ChromeHeadless: {
-      base: 'Chrome',
-      flags: [
-      '--headless','--disable-gpu',
-      '--no-sandbox',
-      '--remote-debugging-port=9222',]
+      'PhantomJS_custom': {
+        base: 'PhantomJS',
+        options: {
+          windowName: 'my-window',
+          settings: {
+            webSecurityEnabled: false
+          },
+        },
+        flags: ['--load-images=true'],
+        debug: true
       }
     },
-      browsers: ['PhantomJS'],
+      browsers: ['PhantomJS', 'PhantomJS_custom'],
       singleRun: true,
       restartOnFileChange: true
   });
