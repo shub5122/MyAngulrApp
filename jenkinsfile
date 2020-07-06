@@ -1,4 +1,4 @@
-node (label: 'build && linux') {
+node (any) {
   stage('Clean Workspace'){
     cleanWs()
   }
@@ -8,7 +8,7 @@ node (label: 'build && linux') {
     docker.image('ismail0352/chrome-node').pull()
 
     stage('Checkout SCM') {
-      checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ismail0352/Packer-Terraform-Jenkins.git']]])
+      checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/devopsarchitecture/MyAngulrApp.git']]])
     }
     
     // Permorming Install and Lint
