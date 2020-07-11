@@ -1,0 +1,46 @@
+yum update -y
+yum groupinstall "Development tools" -y
+curl --silent --location https://github.com/nodesource/distributions/blob/master/rpm/setup_12.x  | sudo bash -
+curl --silent --location https://https://rpm.nodesource.com/setup_10.x  | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_10.x  | sudo bash -
+sudo yum install -y nodejs
+sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+sudo yum install -y yarn
+chrome installtion:
+[root@ip-172-31-11-204 yum.repos.d]# cat `pwd`/google-chrome.repo
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://dl.google.com/linux/linux_signing_key.pub
+ 
+ 
+exit file
+yum install -y google-chrome-stable
+angular user
+ 
+ 
+   optional 11  . $HOME/.nvm/install.sh
+   optional 12  . $HOME/.nvm/nvm.sh
+ 
+ 
+   14  nvm install node
+   15  check nvm version:    node -e "console.log('Running Node.js ' + process.version)"
+   optional 16  export CI_NPM_PATH="npm"
+   optional 17  export CI_NVM_PATH="nvm"
+   18  export CI_NPM_VERSION=10.16.0
+   20  nvm install 10.16.0
+   optional 21  $CI_NVM_PATH use $CI_NPM_VERSION
+               npm install puppeteer
+                npm install karma-coverage
+******you can jenkins job******
+ 
+ 
+git clone https://github.com/devopsarchitecture/MyAngulrApp.git
+npm install
+npm build
+npm run-script build
+npm test-- --code-coverage
+ 
+______________________ end ____________________
